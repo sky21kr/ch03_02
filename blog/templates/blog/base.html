@@ -9,7 +9,10 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div class="page-header">   
+        <div class="page-header">
+            {% if user.is_authenticated %} 
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
             <h1><a href="/">Web Service programming blog</a></h1>
         </div>
         <div class="content container">
@@ -17,23 +20,8 @@
                 <div class="col-md-8">
                     {% block content %}
                     {% endblock %}
-
-                    <!-- {% for post in posts %}
-                    <div class="post">
-                        <div class="date">
-                        {{ post.published_date }}
-                        </div>
-                        <h1><a href="">{{ post.title }}</a></h1>
-                        <p>{{ post.text|linebreaksbr }}</p>
-                    </div>
-                    {% endfor %} -->
                 </div>
             </div>
-            <!-- <video muted autoplay loop>
-                <source src="{% static '동영상.mp4' %}" type="video/mp4">
-                <strong>Your browser does not support the video tag.</strong>
-              </video>
-              <img src="{% static '주토피아.jpg' %}"/> -->
         </div>
     </body>
 </html>
