@@ -15,7 +15,10 @@
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                    {% for post in posts %}
+                    {% block content %}
+                    {% endblock %}
+
+                    <!-- {% for post in posts %}
                     <div class="post">
                         <div class="date">
                         {{ post.published_date }}
@@ -23,14 +26,14 @@
                         <h1><a href="">{{ post.title }}</a></h1>
                         <p>{{ post.text|linebreaksbr }}</p>
                     </div>
-                    {% endfor %}
+                    {% endfor %} -->
                 </div>
             </div>
-            <video muted autoplay loop>
+            <!-- <video muted autoplay loop>
                 <source src="{% static '동영상.mp4' %}" type="video/mp4">
                 <strong>Your browser does not support the video tag.</strong>
               </video>
-              <img src="{% static '주토피아.jpg' %}"/>
+              <img src="{% static '주토피아.jpg' %}"/> -->
         </div>
     </body>
 </html>
